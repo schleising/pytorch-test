@@ -130,3 +130,4 @@ dmypy.json
 
 # Additional ignores
 .DS_Store
+data/
