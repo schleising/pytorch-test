@@ -117,8 +117,10 @@ classes = [
 ]
 
 model.eval()
-x, y = test_data[59][0], test_data[59][1]
-with torch.no_grad():
-    pred = model(x)
-    predicted, actual = classes[pred[0].argmax(0)], classes[y]
-    print(f'Predicted: "{predicted}", Actual: "{actual}"')
+
+for num in range(20):
+    x, y = test_data[num][0], test_data[num][1]
+    with torch.no_grad():
+        pred = model(x)
+        predicted, actual = classes[pred[0].argmax(0)], classes[y]
+        print(f'Predicted: "{predicted}", Actual: "{actual}"')
